@@ -1,0 +1,30 @@
+a.fc-event {
+    cursor: default !important;
+}
+
+.fc-day-today {
+    background-color: transparent !important;
+}
+
+.calendar-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.fc-bg-event {
+    opacity: 0.5;
+}
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .calendar-wrapper {
+        padding: 0 12px;
+        /* aire lateral */
+    }
+
+    .calendar-legend {
+        font-size: 13px;
+    }
+}
