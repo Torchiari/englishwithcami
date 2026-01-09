@@ -24,8 +24,8 @@ export default function CalendarView() {
                     googleCalendarId: '528fd9554ec162c3b7cd3399ed4cb4849922a07b310ac109b1a8017a2dc1621f@group.calendar.google.com',
                 }}
 
-                slotMinTime="07:00:00"
-                slotMaxTime="20:00:00"
+                slotMinTime="12:00:00"
+                slotMaxTime="22:00:00"
                 slotDuration="01:00:00"
                 slotLabelInterval="01:00"
 
