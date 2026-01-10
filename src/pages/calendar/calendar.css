@@ -1,30 +1,81 @@
-a.fc-event {
-    cursor: default !important;
-}
-
-.fc-day-today {
-    background-color: transparent !important;
+:root {
+  --fc-border-color: #f3f4f6;
+  --fc-button-text-color: #374151;
+  --fc-button-bg-color: #ffffff;
+  --fc-button-border-color: #e5e7eb;
+  --fc-today-bg-color: rgba(59, 130, 246, 0.05);
+  --fc-now-indicator-color: #ef4444;
 }
 
 .calendar-wrapper {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
+    background: #ffffff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-.fc-bg-event {
-    opacity: 0.5;
+.fc .fc-toolbar-title {
+    font-weight: 700;
+    color: #1f2937;
+    text-transform: capitalize;
 }
 
+.fc .fc-button-primary {
+    background-color: white;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    padding: 0.4em 0.65em;
+}
+.fc .fc-button-primary:hover {
+    background-color: #f9fafb;
+}
+.fc .fc-button-primary:focus {
+    box-shadow: none; 
+}
 
+a.fc-event {
+    border: none;
+    margin: 1px 2px;
+    cursor: default !important;
+}
+.fc-event-main {
+    padding: 2px;
+}
 
-/* MOBILE */
+/* --- Celu --- */
 @media (max-width: 768px) {
     .calendar-wrapper {
-        padding: 0 12px;
-        /* aire lateral */
+        padding: 0;
+        box-shadow: none;
+        border: none;
     }
 
-    .calendar-legend {
-        font-size: 13px;
+    .fc .fc-toolbar-title {
+        font-size: 1.1rem; 
+    }
+
+    .fc .fc-button {
+        padding: 0.3em 0.5em;
+        font-size: 0.9em;
+    }
+
+    .fc .fc-timegrid-axis-cushion,
+    .fc .fc-timegrid-slot-label-cushion {
+        font-size: 0.75rem;
+        padding: 0 4px;
+        text-transform: lowercase;
+    }
+
+    .fc .fc-timegrid-axis {
+        width: 40px !important; 
+    }
+    
+    .fc .fc-toolbar {
+        margin-bottom: 1rem !important;
+        padding: 0 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
