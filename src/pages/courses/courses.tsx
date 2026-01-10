@@ -27,7 +27,7 @@ const Courses: React.FC = () => {
 
         <div className="bg-white rounded-3xl p-8 shadow-sm border border-indigo-50 text-center max-w-4xl mx-auto">
           <p className="text-xl text-slate-700 font-medium leading-relaxed">
-            Ofrezco <span className="text-indigo-600 font-bold">cursos mensuales</span> o <span className="text-purple-600 font-bold">clases particulares</span> para objetivos específicos: inglés de negocios, viajes, presentaciones laborales o simplemente por hobby.
+            Ofrezco <span className="text-indigo-600 font-bold">cursos mensuales</span> y <span className="text-purple-600 font-bold">clases personalizadas</span> para objetivos especificos, inglés profesional para tu carrera , inglés útil para tus viajes, preparación de presentaciones laborales o simplemente para disfrutar del idioma en tu tiempo libre
           </p>
         </div>
       </div>

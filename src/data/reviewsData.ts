@@ -28,7 +28,7 @@ export const reviewsData: Review[] = [
         id: 4,
         name: "Silvia",
         age: "60",
-        text: "Mis dudas y mis preguntas cada vez más frecuentes, me motivan a conseguir respuestas. Clases muy interesantes.",
+        text: "Mi interés por el idioma sigue intacto gracias a lo dinámicas que son las clases. Me animé a hablar y el tiempo se pasa volando. ¡Muy recomendado!",
     },
     {
         id: 5,

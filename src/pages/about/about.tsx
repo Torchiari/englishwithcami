@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
                 Hola, soy <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-purple-600">Cami</span>.
               </h1>
               <h2 className="text-xl md:text-2xl text-slate-600 mt-2 font-medium">
-                Profesora de inglés personalizada
+                Profesora de inglés
               </h2>
             </div>
 

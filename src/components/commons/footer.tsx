@@ -13,10 +13,7 @@ export default function Footer() {
                     />
 
                     <p className="max-w-sm text-gray-600 leading-relaxed">
-                        Profesora de inglés dedicada a transformar el aprendizaje
-                        en una experiencia clara, sencilla y efectiva.
-                        Ayuda a estudiantes a mejorar su comunicación,
-                        ganar confianza y alcanzar nuevos objetivos académicos y profesionales.
+                        Profesora de inglés apasionada por convertir cada clase en una experiencia práctica y motivadora. Acompaño a mis estudiantes para que desarrollen una comunicación auténtica, ganen seguridad al expresarse y alcancen sus metas personales, académicas y profesionales.
                     </p>
                 </div>
 
