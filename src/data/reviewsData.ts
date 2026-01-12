@@ -32,8 +32,14 @@ export const reviewsData: Review[] = [
     },
     {
         id: 5,
-        name: "Laura",
-        age: "24",
-        text: "Necesitaba inglés para viajar y en pocos meses logré la confianza que me faltaba. ¡Súper recomendado!",
+        name: "Mary",
+        age: "43",
+        text: "Con Cami encontré la motivación que me faltaba. Clases online, tecnológicas y súper enriquecedoras. ¡El avance es visible día tras día!",
+    },
+    {
+        id: 6,
+        name: "Anita",
+        age: "27",
+        text: "Arranqué sin animarme a hablar y hoy es mi parte favorita. Las clases son súper personalizadas, descontracturadas y se pasan volando. ¡Recomiendo 100%!",
     }
 ];
