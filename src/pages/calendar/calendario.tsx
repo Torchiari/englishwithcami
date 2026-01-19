@@ -49,7 +49,7 @@ export default function CalendarView() {
                     }}
 
                     slotMinTime="08:00:00"
-                    slotMaxTime="21:00:00"
+                    slotMaxTime="23:00:00"
                     slotDuration="01:00:00"
                     allDaySlot={false}
                     locale="es"
@@ -78,7 +78,7 @@ export default function CalendarView() {
                     eventColor="#fee2e2"
                     eventTextColor="#991b1b"
                     eventBorderColor="transparent"
-                    hiddenDays={[0]}
+                    hiddenDays={[6, 0]}
 
                     slotLabelFormat={{
                         hour: 'numeric',

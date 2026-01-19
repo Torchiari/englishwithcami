@@ -8,74 +8,105 @@
 }
 
 .calendar-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: #ffffff;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .fc .fc-toolbar-title {
-    font-weight: 700;
-    color: #1f2937;
-    text-transform: capitalize;
+  font-weight: 700;
+  color: #1f2937;
+  text-transform: capitalize;
 }
 
 .fc .fc-button-primary {
-    background-color: white;
-    color: #374151;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    padding: 0.4em 0.65em;
+  background-color: white;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  padding: 0.4em 0.65em;
 }
 .fc .fc-button-primary:hover {
-    background-color: #f9fafb;
+  background-color: #f9fafb;
 }
 .fc .fc-button-primary:focus {
-    box-shadow: none; 
+  box-shadow: none; 
 }
 
 a.fc-event {
-    border: none;
-    margin: 1px 2px;
-    cursor: default !important;
+  border: none;
+  margin: 1px 2px;
+  cursor: default !important;
 }
 .fc-event-main {
-    padding: 2px;
+  padding: 2px;
 }
 
-/* --- Celu --- */
-@media (max-width: 768px) {
-    .calendar-wrapper {
-        padding: 0;
-        box-shadow: none;
-        border: none;
-    }
+.fc .fc-timegrid-slot-label {
+    vertical-align: top !important;
+}
 
-    .fc .fc-toolbar-title {
-        font-size: 1.1rem; 
-    }
+.fc .fc-timegrid-slot-label-frame {
+    overflow: visible !important;
+    text-align: right; 
+}
 
-    .fc .fc-button {
-        padding: 0.3em 0.5em;
-        font-size: 0.9em;
-    }
-
-    .fc .fc-timegrid-axis-cushion,
-    .fc .fc-timegrid-slot-label-cushion {
-        font-size: 0.75rem;
-        padding: 0 4px;
-        text-transform: lowercase;
-    }
-
-    .fc .fc-timegrid-axis {
-        width: 40px !important; 
-    }
+.fc .fc-timegrid-slot-label-cushion {
+    position: relative;
+    top: 0;
+    transform: translateY(-50%);
+    z-index: 10; 
+    background-color: #ffffff; 
+    padding-left: 4px; 
+    padding-right: 8px; 
     
-    .fc .fc-toolbar {
-        margin-bottom: 1rem !important;
-        padding: 0 4px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    font-size: 0.75rem; 
+    color: #70757a;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.fc-timegrid-slot {
+    height: 2em !important;
+    border-bottom: 1px solid #dadce0 !important;
+}
+
+.fc-theme-standard .fc-timegrid-slot-label {
+    border: none !important;
+}
+
+@media (max-width: 768px) {
+  .calendar-wrapper {
+      padding: 0;
+      box-shadow: none;
+      border: none;
+  }
+
+  .fc .fc-toolbar-title {
+      font-size: 1.1rem; 
+  }
+
+  .fc .fc-button {
+      padding: 0.3em 0.5em;
+      font-size: 0.9em;
+  }
+
+  .fc .fc-timegrid-axis-cushion,
+  .fc .fc-timegrid-slot-label-cushion {
+      font-size: 0.70rem; 
+      padding-right: 4px;
+  }
+
+  .fc .fc-timegrid-axis {
+      width: 35px !important; 
+  }
+  
+  .fc .fc-toolbar {
+      margin-bottom: 1rem !important;
+      padding: 0 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
 }
