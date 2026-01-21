@@ -18,7 +18,7 @@ const Courses: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-12">
           <ObjectiveCard icon={<Briefcase />} text="¿Entrevista laboral o mejor puesto?" />
           <ObjectiveCard icon={<Globe />} text="¿Viajar y comunicarte con confianza?" />
           <ObjectiveCard icon={<MessageCircle />} text="¿Fluidez real al hablar?" />
@@ -80,26 +80,26 @@ const Courses: React.FC = () => {
           <p className="text-slate-600">Aprendizaje diseñado para tu vida real.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
           <FeatureBox
-            icon={<Video className="w-6 h-6 text-blue-500" />}
+            icon={<Video className="w-5 h-5 md:w-6 md:h-6 text-blue-500" />}
             title="100% Online"
             desc="Clases cómodas a través de Google Meet."
           />
           <FeatureBox
-            icon={<Heart className="w-6 h-6 text-pink-500" />}
+            icon={<Heart className="w-5 h-5 md:w-6 md:h-6 text-pink-500" />}
             title="Sin Presiones"
-            desc="Sin tareas obligatorias. Acceso a Classroom con actividades extra opcionales."
+            desc="Sin tareas obligatorias. Acceso a Classroom opcional."
           />
           <FeatureBox
-            icon={<BookOpen className="w-6 h-6 text-indigo-500" />}
-            title="Materiales Variados"
-            desc="Libros, canciones, podcasts, TED Talks y juegos. Todo en tu Google Doc."
+            icon={<BookOpen className="w-5 h-5 md:w-6 md:h-6 text-indigo-500" />}
+            title="Materiales"
+            desc="Libros, canciones, podcasts, TED Talks y juegos."
           />
           <FeatureBox
-            icon={<MessageCircle className="w-6 h-6 text-green-500" />}
-            title="Feedback Constante"
-            desc="Para que avances con seguridad (Sin certificaciones oficiales)."
+            icon={<MessageCircle className="w-5 h-5 md:w-6 md:h-6 text-green-500" />}
+            title="Feedback"
+            desc="Para que avances con seguridad (Sin certificaciones)."
           />
         </div>
       </div>
@@ -167,21 +167,20 @@ const Courses: React.FC = () => {
   );
 };
 
-
 const ObjectiveCard: React.FC<{ icon: React.ReactNode; text: string }> = ({ icon, text }) => (
-  <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center gap-4 hover:shadow-md transition-shadow group">
-    <div className="p-3 bg-indigo-50 text-indigo-600 rounded-full group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-      {React.cloneElement(icon as React.ReactElement, { className: "w-6 h-6" } as any)}
+  <div className="bg-white p-3 md:p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center gap-2 md:gap-4 hover:shadow-md transition-shadow group h-full justify-center">
+    <div className="p-2 md:p-3 bg-indigo-50 text-indigo-600 rounded-full group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+      {React.cloneElement(icon as React.ReactElement, { className: "w-5 h-5 md:w-6 md:h-6" } as any)}
     </div>
-    <p className="font-semibold text-slate-700">{text}</p>
+    <p className="font-bold text-xs md:text-base md:font-semibold text-slate-700 leading-tight">{text}</p>
   </div>
 );
 
 const FeatureBox: React.FC<{ icon: React.ReactNode; title: string; desc: string }> = ({ icon, title, desc }) => (
-  <div className="bg-white p-6 rounded-2xl border border-slate-100 hover:border-indigo-100 transition-colors">
-    <div className="mb-4 bg-slate-50 w-fit p-3 rounded-xl">{icon}</div>
-    <h3 className="font-bold text-slate-800 mb-2">{title}</h3>
-    <p className="text-sm text-slate-600 leading-relaxed">{desc}</p>
+  <div className="bg-white p-3 md:p-6 rounded-2xl border border-slate-100 hover:border-indigo-100 transition-colors flex flex-col items-center text-center md:items-start md:text-left h-full">
+    <div className="mb-2 md:mb-4 bg-slate-50 w-fit p-2 md:p-3 rounded-xl">{icon}</div>
+    <h3 className="font-bold text-slate-800 mb-1 text-sm md:text-base">{title}</h3>
+    <p className="text-xs md:text-sm text-slate-600 leading-snug">{desc}</p>
   </div>
 );
 

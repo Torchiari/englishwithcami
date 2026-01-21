@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-2 md:gap-4 md:grid-cols-3">
               <FeatureCard icon={<Globe className="w-5 h-5 text-blue-500" />} title="Viajar" desc="Comunicate con confianza." />
               <FeatureCard icon={<Briefcase className="w-5 h-5 text-purple-500" />} title="Trabajar" desc="Potenciá tu carrera." />
               <FeatureCard icon={<MessageCircle className="w-5 h-5 text-green-500" />} title="Socializar" desc="Sin barreras." />
@@ -138,10 +138,10 @@ const Hero: React.FC = () => {
 };
 
 const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; desc: string }> = ({ icon, title, desc }) => (
-  <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+  <div className="bg-white p-2 md:p-4 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow h-full flex flex-col items-center md:items-start text-center md:text-left">
     <div className="mb-2 bg-slate-50 w-fit p-2 rounded-lg">{icon}</div>
     <h3 className="font-bold text-slate-800 text-sm mb-1">{title}</h3>
-    <p className="text-xs text-slate-500 leading-snug">{desc}</p>
+    <p className="text-[10px] md:text-xs text-slate-500 leading-snug">{desc}</p>
   </div>
 );
 
