@@ -65,15 +65,41 @@ export default function CalendarView() {
                         right: 'next'
                     }}
 
-                    eventClick={(info) => info.jsEvent.preventDefault()}
+                    eventContent={(info) => {
+                        // 1. Definimos el formato de hora (para no repetir código)
+                        const opcionesHora: Intl.DateTimeFormatOptions = {
+                            hour: 'numeric',
+                            minute: '2-digit',
+                            hour12: true
+                        };
 
-                    eventContent={() => (
-                        <div className="flex items-center justify-center h-full w-full">
-                            <span className="text-xs font-semibold tracking-wide opacity-80">
-                                Ocupado
-                            </span>
-                        </div>
-                    )}
+                        // 2. Obtenemos Inicio y Fin
+                        const horaInicio = info.event.start?.toLocaleTimeString('es-AR', opcionesHora);
+                        const horaFin = info.event.end?.toLocaleTimeString('es-AR', opcionesHora);
+
+                        // 3. Creamos el texto del rango (Ej: "8:00 a.m. - 9:00 a.m.")
+                        const rangoHorario = `${horaInicio} - ${horaFin}`;
+
+                        // 4. Calculamos si es corto para achicar un poquito la letra si hace falta
+                        const start = info.event.start?.getTime() || 0;
+                        const end = info.event.end?.getTime() || 0;
+                        const esEventoCorto = (end - start) <= 3600000; // 1 hora o menos
+
+                        return (
+                            <div className="flex flex-col items-center justify-center h-full w-full p-0.5 leading-tight">
+                                {/* Rango Horario */}
+                                <span className={`font-medium opacity-70 text-center mb-0.5 ${esEventoCorto ? 'text-[9px]' : 'text-[10px]'
+                                    }`}>
+                                    {rangoHorario}
+                                </span>
+
+                                {/* Texto Ocupado */}
+                                <span className="text-xs font-bold tracking-wide opacity-100">
+                                    Ocupado
+                                </span>
+                            </div>
+                        )
+                    }}
 
                     eventColor="#fee2e2"
                     eventTextColor="#991b1b"
