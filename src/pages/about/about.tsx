@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  GraduationCap, MessageCircle, Briefcase, Globe, User, 
-  CalendarDays, HelpCircle, Quote, Star 
+import {
+  GraduationCap, MessageCircle, Briefcase, Globe, User,
+  CalendarDays, HelpCircle, Quote, Star
 } from 'lucide-react';
 import FaqAccordion from '../../components/accordion/faqAccordion';
 import { faqData } from '../../data/faqData';
 import { reviewsData, type Review } from '../../data/reviewsData';
-import camiFoto from '../../assets/foto-cami.jpeg'; 
+import camiFoto from '../../assets/foto-cami.jpeg';
 
 const Hero: React.FC = () => {
+  const [paused, setPaused] = useState(false);
   return (
     <div className="w-full bg-white">
       <style>{`
@@ -28,12 +29,12 @@ const Hero: React.FC = () => {
       `}</style>
 
       <section className="relative w-full min-h-screen bg-linear-to-br from-indigo-50 via-white to-purple-50 flex items-center justify-center overflow-hidden px-6 py-12 md:py-20">
-        
+
         <div className="absolute top-0 left-0 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 mix-blend-multiply" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 mix-blend-multiply" />
 
         <div className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-          
+
           <div className="space-y-8 animate-fade-in-up">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold mb-4">
@@ -93,23 +94,29 @@ const Hero: React.FC = () => {
       </section>
 
       <section className="py-16 bg-white border-y border-slate-100 relative overflow-hidden">
-        
+
         <div className="container mx-auto px-6 mb-10 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 flex items-center justify-center gap-2">
-                <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" />
-                Lo que dicen mis alumnos
-            </h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 flex items-center justify-center gap-2">
+            <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+            Lo que dicen mis alumnos
+          </h2>
         </div>
 
         <div className="relative w-full max-w-[100vw] overflow-hidden">
-             <div className="absolute top-0 left-0 h-full w-20 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" />
-             <div className="absolute top-0 right-0 h-full w-20 bg-linear-to-l from-white to-transparent z-10 pointer-events-none" />
-             
-             <div className="animate-infinite-scroll flex gap-6 px-6">
-                {[...reviewsData, ...reviewsData].map((item, index) => (
-                    <ReviewCard key={`${item.id}-${index}`} data={item} />
-                ))}
-             </div>
+          <div className="absolute top-0 left-0 h-full w-20 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 right-0 h-full w-20 bg-linear-to-l from-white to-transparent z-10 pointer-events-none" />
+
+          <div className="animate-infinite-scroll flex gap-6 px-6"
+            onTouchStart={() => setPaused(true)}
+            onTouchEnd={() => setPaused(false)}
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            style={{ animationPlayState: paused ? "paused" : "running" }}
+          >
+            {[...reviewsData, ...reviewsData].map((item, index) => (
+              <ReviewCard key={`${item.id}-${index}`} data={item} />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -129,7 +136,7 @@ const Hero: React.FC = () => {
             </p>
           </div>
           <FaqAccordion data={faqData} />
-          
+
         </div>
       </section>
 
@@ -151,7 +158,7 @@ const ReviewCard: React.FC<{ data: Review }> = ({ data }) => (
       <div className="flex justify-between items-start mb-3">
         <Quote className="w-6 h-6 text-indigo-200 fill-indigo-100" />
       </div>
-      <p className="text-slate-700 text-base font-medium leading-relaxed mb-4 line-clamp-4">
+      <p className="text-slate-700 text-base font-medium leading-relaxed mb-4">
         "{data.text}"
       </p>
     </div>
