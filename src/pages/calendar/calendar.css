@@ -34,6 +34,17 @@
   box-shadow: none; 
 }
 
+.fc-event {
+    cursor: default !important;
+    text-decoration: none !important;
+    pointer-events: auto;
+}
+
+.fc-event:hover {
+    filter: none !important;
+    background-color: #fee2e2 !important;
+}
+
 a.fc-event {
   border: none;
   margin: 1px 2px;

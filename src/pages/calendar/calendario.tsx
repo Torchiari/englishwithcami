@@ -36,7 +36,10 @@ export default function CalendarView() {
                     googleCalendarApiKey={apiKey}
                     events={{ googleCalendarId: calendarId }}
 
-                    // --- Celu ---
+                    eventClick={(info) => {
+                        info.jsEvent.preventDefault();
+                    }}
+
                     views={{
                         timeGridDay: {
                             dayHeaders: false,
@@ -74,7 +77,6 @@ export default function CalendarView() {
 
                         const horaInicio = info.event.start?.toLocaleTimeString('es-AR', opcionesHora);
                         const horaFin = info.event.end?.toLocaleTimeString('es-AR', opcionesHora);
-
                         const rangoHorario = `${horaInicio} - ${horaFin}`;
 
                         const start = info.event.start?.getTime() || 0;
@@ -82,9 +84,8 @@ export default function CalendarView() {
                         const esEventoCorto = (end - start) <= 3600000;
 
                         return (
-                            <div className="flex flex-col items-center justify-center h-full w-full p-0.5 leading-tight">
-                                <span className={`font-medium opacity-70 text-center mb-0.5 ${esEventoCorto ? 'text-[9px]' : 'text-[10px]'
-                                    }`}>
+                            <div className="flex flex-col items-center justify-center h-full w-full p-0.5 leading-tight select-none">
+                                <span className={`font-medium opacity-70 text-center mb-0.5 ${esEventoCorto ? 'text-[9px]' : 'text-[10px]'}`}>
                                     {rangoHorario}
                                 </span>
 
@@ -92,7 +93,7 @@ export default function CalendarView() {
                                     Ocupado
                                 </span>
                             </div>
-                        )
+                        );
                     }}
 
                     eventColor="#fee2e2"
