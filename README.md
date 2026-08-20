@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# English With Cami
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma web desarrollada para **English With Cami**, un proyecto dedicado a la enseñanza de inglés mediante clases personalizadas y programas de aprendizaje.
 
-Currently, two official plugins are available:
+El objetivo del proyecto fue mejorar la presencia digital del emprendimiento y, principalmente, resolver una necesidad concreta relacionada con la gestión de horarios y consultas de potenciales alumnos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌐 **Sitio web:** https://www.englishwithcami.com.ar/
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## El desafío
 
-## Expanding the ESLint configuration
+Una gran parte del tiempo de la clienta está destinado a brindar clases y acompañar a sus alumnos.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Esto provocaba que recibiera constantemente mensajes de potenciales alumnos consultando por horarios disponibles. Para responder cada consulta, debía revisar manualmente su calendario y luego comunicarse con cada persona, lo que generaba una tarea repetitiva y podía provocar demoras en las respuestas.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+El desafío consistía en permitir que los potenciales alumnos pudieran consultar la disponibilidad de horarios de forma directa, sin depender de una respuesta manual para obtener esa información.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## La solución
+
+Desarrollamos una plataforma web que aprovecha el calendario de **Google Calendar** que la clienta ya utilizaba para organizar sus horarios.
+
+Mediante la integración con **FullCalendar**, la disponibilidad se muestra directamente dentro de la página web.
+
+De esta manera, la clienta puede continuar gestionando su agenda utilizando Google Calendar, mientras que los potenciales alumnos pueden consultar los horarios disponibles desde la plataforma y comunicarse cuando ya tienen un horario elegido.
+
+### Flujo de disponibilidad
+
+```text id="tcj59u"
+Google Calendar
+      ↓
+Integración con Google Calendar
+      ↓
+FullCalendar
+      ↓
+Sitio web de English With Cami
+      ↓
+Consulta de horarios disponibles
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Esta solución permite reducir las consultas repetitivas relacionadas con la disponibilidad y facilita el acceso a la información para los potenciales alumnos.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Funcionalidades
+
+* Presentación de la propuesta y metodología de enseñanza.
+* Información sobre clases y programas de aprendizaje.
+* Calendario interactivo para consultar horarios disponibles.
+* Integración con Google Calendar mediante FullCalendar.
+* Testimonios de alumnos.
+* Sección de preguntas frecuentes.
+* Acceso directo a los canales de contacto.
+* Diseño adaptable a dispositivos móviles y escritorio.
+
+---
+
+## Tecnologías utilizadas
+
+* **React**
+* **TypeScript**
+* **Vite**
+* **Tailwind CSS**
+* **FullCalendar**
+* **Google Calendar**
+
+---
+
+## Proyecto en producción
+
+El proyecto se encuentra actualmente en producción y puede visitarse en:
+
+🌐 **https://www.englishwithcami.com.ar/**
+
+---
+
+## Desarrollo
+
+Proyecto desarrollado en colaboración por:
+
+* [Guido Zoppo](https://github.com/guidozoppo)
+* [Danel Torchiari](https://github.com/Torchiari)
+
+---
+
+🚀 **Actualmente en producción.**
